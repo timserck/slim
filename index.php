@@ -8,11 +8,12 @@
     $app->add(new \JsonApiMiddleware());
 
      $app->get('/', function() use ($app) {
+     	//
         $app->render(200,array(
                 'msg' => 'Welcome to my json API!',
             ));
     });
-
-     header("Content-Type: application/json"); 
-   echo json_encode($app['message']); 
-   exit;
+     $app->run();
+   //  header("Content-Type: application/json"); 
+   // echo json_encode($app['message']); 
+   // exit;
